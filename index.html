@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protected App Installer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .container {
+            width: 300px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Встановлення захищеної програми</h2>
+        <label for="install-path">Оберіть шлях для встановлення:</label>
+        <input type="text" id="install-path" placeholder="Введіть шлях">
+        <button onclick="installApp()">Встановити програму</button>
+        <p id="status"></p>
+    </div>
+
+    <script>
+        function installApp() {
+            const installPath = document.getElementById("install-path").value;
+            if (installPath) {
+                document.getElementById("status").innerText = `Програму встановлено у: ${installPath}`;
+                // Тут можна додати код для збереження інформації про комп'ютер та хешування
+                // Наприклад, виклик сервера для збереження даних або додавання реєстраційного файлу
+            } else {
+                document.getElementById("status").innerText = "Будь ласка, вкажіть шлях для встановлення.";
+            }
+        }
+    </script>
+</body>
+</html>
